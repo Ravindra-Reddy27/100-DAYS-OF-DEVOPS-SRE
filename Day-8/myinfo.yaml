@@ -1,0 +1,13 @@
+name: Ravindra Reddy
+age: 21
+studying: true
+tasks:
+  - Study
+  - Exercise
+  - Reading
+  - Watching Movies
+Address:
+  street: xyx
+  city: abc
+  state: mno
+  country: pqr

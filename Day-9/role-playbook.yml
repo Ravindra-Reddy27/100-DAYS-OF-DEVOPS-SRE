@@ -1,0 +1,6 @@
+---
+# Role Play Book
+- hosts: app
+  become: true
+  roles:
+    - httpd

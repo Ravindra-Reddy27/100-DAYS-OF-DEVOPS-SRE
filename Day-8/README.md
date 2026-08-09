@@ -1,4 +1,4 @@
-## Day 07/100 – Passwordless Authentication & YAML Basics
+## Day 08/100 – Passwordless Authentication & YAML Basics
 
 ## Passwordless Authentication: 
 

@@ -1,0 +1,18 @@
+--- 
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: start an instance with a public IP address
+    amazon.aws.ec2_instance:
+      name: "ansible-instance"
+      key_name: "ravi-key" # Change the key with your key name.
+      instance_type: t2.micro
+      security_group: launch-wizard-3 # Change it with your security group.
+      region: us-east-1
+      aws_access_key: "{{aws_access_key}}"  # From vault as defined
+      aws_secret_key: "{{aws_secret_key}}"  # From vault as defined      
+      network:
+        assign_public_ip: true
+      image_id: ami-04b70fa74e45c3917
+      tags:
+        Environment: Testing

@@ -1,0 +1,28 @@
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Check the openssl and openssh present
+      apt:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - openssl
+        - openssh
+      ignore_errors: true
+
+    - name: Check if docker is present
+      command: docker --version
+      register: output
+      ignore_errors: true
+
+    - name: debug the docker --version output
+      debug:
+        var: output
+
+    - name: Install docker
+      apt:
+        name: docker.io
+        state: present
+      when: output.failed
+

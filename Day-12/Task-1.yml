@@ -1,0 +1,33 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Create EC2 instances
+      amazon.aws.ec2_instance:
+        name: "{{ item.name }}"
+        key_name: "ravi-key"
+        instance_type: t2.micro
+        security_group: launch-wizard-3
+        region: us-east-1
+
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+
+        network:
+          assign_public_ip: true
+
+        image_id: "{{ item.image }}"
+
+        tags:
+           environment: "{{ item.name }}"
+
+      loop:
+        - image: "ami-0bdc7d025135d7b49" # According to your region and account update it.
+          name: "manage-node-1"
+
+        - image: "ami-0b6d9d3d33ba97d99"
+          name: "manage-node-2"
+
+        - image: "ami-0b6d9d3d33ba97d99"
+          name: "manage-node-3"

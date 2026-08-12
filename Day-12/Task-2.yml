@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Stop previously created EC2 instances
+      amazon.aws.ec2_instance:
+        instance_ids:
+          - i-0120b2f8a4edad2e6 ## Your instance_ids
+          - i-0231ea3dda4e1e0cc
+          - i-057f7d844bff0be9d
+        region: us-east-1
+        state: stopped
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"

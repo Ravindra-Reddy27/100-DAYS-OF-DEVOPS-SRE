@@ -1,0 +1,24 @@
+---
+- name: S3 Buckets
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: List of S3 Buckets
+      amazon.aws.s3_bucket_info:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+      register: result
+
+    - name: Display S3 bucket information
+      debug:
+        var: result
+
+    - name: Enable Versioning
+      amazon.aws.s3_bucket:
+        name: "{{ item.name }}"
+        versioning: 
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+      loop: "{{ result.buckets }}"
+           

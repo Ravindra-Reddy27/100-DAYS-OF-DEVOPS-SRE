@@ -1,0 +1,12 @@
+gitignore
+
+# Terraform working directory
+.terraform/
+
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Terraform lock file
+.terraform.lock.hcl

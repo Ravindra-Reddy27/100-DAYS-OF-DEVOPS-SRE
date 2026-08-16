@@ -35,3 +35,8 @@ terraform output -raw output_name
 ```
 
 Check Out [Day-14](../Day-14/README.md) and [Day-15](../Day-15/README.md) to get clarity.
+
+
+For reference:
+![info](Images/info.png)
+![info](Images/exe.png)

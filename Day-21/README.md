@@ -16,7 +16,7 @@ A Docker bridge network is a virtual network (virtual switch) created by Docker 
 
 * One bridge network container can't communicate with another bridge network container.
 
-Eg:
+Eg: 
 ```
 docker network create app-network 
 ```

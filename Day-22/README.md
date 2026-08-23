@@ -40,4 +40,4 @@ Check out [Docker Example](docker-compose.yml)
 
 For reference:
 
-![Info](Images/info.jpeg)
+![Info](Images/info.jpeg)  

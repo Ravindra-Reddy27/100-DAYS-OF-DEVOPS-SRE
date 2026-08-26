@@ -1,0 +1,11 @@
+apiVersion: v1  # It is mandatory in a manifest and tells Kubernetes which API version to use to understand and process the resource.[v1-Pod, app/v1 - Deployment]
+kind: Pod       # Tells Kubernetes what type of resource/object to create. Here, Pod Object.
+metadata:       # Contains identifying information about the Pod.
+  name: nginx
+spec:           # Desired Configuration about the Pod.
+  containers: 
+    - name: nginx   
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+  

@@ -127,3 +127,9 @@ stringData:
 | **RBAC access control** | ✅ | ✅ |
 | **Namespace scoped** | ✅ | ✅ |
 | **Can be updated** | ✅ | ✅ |
+
+
+
+Reference:
+
+![info](Images/info.png)
